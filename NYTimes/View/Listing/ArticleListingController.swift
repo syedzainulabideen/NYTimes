@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 class ArticleListingController: UIViewController {
     @IBOutlet weak var tableView:UITableView! {
@@ -16,7 +15,7 @@ class ArticleListingController: UIViewController {
             self.tableView.register(ArticleListingCell.nibValue, forCellReuseIdentifier: ArticleListingCell.identifierValue)
         }
     }
-    var viewModel:ArticleViewModel = ArticleViewModel()
+    var viewModel:AppViewModel = AppViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,6 @@ class ArticleListingController: UIViewController {
         
         Task {
             await self.viewModel.fetchArticles()
-            print(self.viewModel.mostViewedArticles.count)
             self.tableView.reloadData()
         }
     }
@@ -36,13 +34,16 @@ extension ArticleListingController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListingCell.identifierValue) as? ArticleListingCell {
-            return cell
-        }
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListingCell.identifierValue) as? ArticleListingCell
+        else { return UITableViewCell() }
+        
+        let currentArticle = self.viewModel.mostViewedArticles[indexPath.row]
+        cell.articleViewModel = currentArticle
+        
+        return cell
     }
     
-    
-    
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
+    }
 }

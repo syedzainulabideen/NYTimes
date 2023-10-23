@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,21 +11,133 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="ArticleListingCell" customModule="NYTimes" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="357" height="142"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="ArticleListingCell" customModule="NYTimes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="326.66666666666669" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="381.66666666666669" height="117"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-Pc-B3a">
+                        <rect key="frame" x="12" y="12" width="357.66666666666669" height="93"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QN-1c-yRe">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="93"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="50" translatesAutoresizingMaskIntoConstraints="NO" id="Gpg-PD-3bY">
+                                        <rect key="frame" x="0.0" y="21.666666666666664" width="50" height="49.999999999999993"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gpg-PD-3bY" secondAttribute="height" multiplier="1:1" id="95Y-kK-GLA"/>
+                                            <constraint firstAttribute="height" constant="50" id="xFi-rr-iC0"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gpg-PD-3bY" secondAttribute="trailing" id="8P1-6f-KFb"/>
+                                    <constraint firstItem="Gpg-PD-3bY" firstAttribute="centerX" secondItem="6QN-1c-yRe" secondAttribute="centerX" id="dzp-sb-gsQ"/>
+                                    <constraint firstItem="Gpg-PD-3bY" firstAttribute="leading" secondItem="6QN-1c-yRe" secondAttribute="leading" id="ewI-zb-eUA"/>
+                                    <constraint firstItem="Gpg-PD-3bY" firstAttribute="centerY" secondItem="6QN-1c-yRe" secondAttribute="centerY" id="udd-rh-PAe"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wKI-nj-omY">
+                                <rect key="frame" x="62" y="0.0" width="295.66666666666669" height="93"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Supporters of democratic Supporters of democratic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNe-sx-dys">
+                                        <rect key="frame" x="0.0" y="0.0" width="295.66666666666669" height="48.333333333333336"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uYt-Ll-JWu">
+                                        <rect key="frame" x="0.0" y="53.333333333333329" width="295.66666666666669" height="39.666666666666671"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By David" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCG-ow-aPg">
+                                                <rect key="frame" x="0.0" y="0.0" width="295.66666666666669" height="16.333333333333332"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj4-yI-DXJ">
+                                                <rect key="frame" x="0.0" y="19.333333333333343" width="295.66666666666669" height="20.333333333333329"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Thompson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-tR-9kp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="199.33333333333334" height="20.333333333333332"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="e8B-R8-w8J">
+                                                        <rect key="frame" x="199.33333333333331" y="0.0" width="96.333333333333314" height="20.333333333333332"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jCs-9K-yeu">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="20.666666666666668" height="17.333333333333336"/>
+                                                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                                                <imageReference key="image" image="calendar" catalog="system" renderingMode="hierarchical-single">
+                                                                    <hierarchicalColors>
+                                                                        <color white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color systemColor="secondaryLabelColor"/>
+                                                                        <color systemColor="tertiaryLabelColor"/>
+                                                                    </hierarchicalColors>
+                                                                </imageReference>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-06-23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0F-m0-1Vy">
+                                                                <rect key="frame" x="24.666666666666686" y="0.0" width="71.666666666666671" height="20.333333333333332"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <bool key="isElement" value="NO"/>
+                                                                </accessibility>
+                                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4Iy-Pc-B3a" secondAttribute="trailing" constant="12" id="4y5-Cs-AtZ"/>
+                    <constraint firstAttribute="bottom" secondItem="4Iy-Pc-B3a" secondAttribute="bottom" constant="12" id="K3V-Mx-55X"/>
+                    <constraint firstItem="4Iy-Pc-B3a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Rcv-dt-gfu"/>
+                    <constraint firstItem="4Iy-Pc-B3a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="yoC-lW-cLh"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="205" y="52"/>
+            <connections>
+                <outlet property="articleTitleLabel" destination="CNe-sx-dys" id="L9H-fS-fOG"/>
+                <outlet property="authorLabel" destination="yCG-ow-aPg" id="XCv-PX-Jif"/>
+                <outlet property="dateLabel" destination="j0F-m0-1Vy" id="fuo-1U-T5O"/>
+                <outlet property="profileImageView" destination="Gpg-PD-3bY" id="CKA-sL-NxT"/>
+                <outlet property="sectionLabel" destination="L1U-tR-9kp" id="LUT-3k-dRV"/>
+            </connections>
+            <point key="canvasLocation" x="412.21374045801525" y="41.901408450704224"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="50" width="50" height="50"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

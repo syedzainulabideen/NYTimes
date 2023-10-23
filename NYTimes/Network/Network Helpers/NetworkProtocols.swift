@@ -10,6 +10,7 @@ import Foundation
 protocol NetworkManager {
     init(currentSession: URLSession)
     func processRequest<T>(_ request: URLRequest) async throws -> T where T : Decodable
+    func loadImageData(_ url:URL) async throws -> Data
 }
 
 protocol EndPoint {

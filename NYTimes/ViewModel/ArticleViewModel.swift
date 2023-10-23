@@ -2,43 +2,53 @@
 //  ArticleViewModel.swift
 //  NYTimes
 //
-//  Created by Mac8 on 23/10/2023.
+//  Created by Syed Zainulabideen on 23/10/2023.
 //
 
 import Foundation
-import ProgressHUD
+import UIKit
 
 class ArticleViewModel: ObservableObject {
+    private let article: ArticleResponse.Result
     private var networkManager:NetworkManager
-    init(networkManager: NetworkManager = NYNetworkManager()) {
+    
+    @Published var image: UIImage? = nil
+    
+    init(article: ArticleResponse.Result, networkManager: NetworkManager = NYNetworkManager()) {
+        self.article = article
         self.networkManager = networkManager
     }
     
-    @Published var mostViewedArticles:[ArticleResponse.Result] = []
+    var articleTitleValue:String {
+        self.article.abstract ?? ""
+    }
     
-    @MainActor func fetchArticles() async {
-        
-        defer { ProgressHUD.dismiss() }
-        ProgressHUD.animate()
-        
+    var articleByAuthorValue:String {
+        self.article.byline ?? ""
+    }
+    
+    var articlePublishedDate: String {
+        self.article.publishedDate ?? ""
+    }
+    
+    var articleSection:String {
+        self.article.section ?? ""
+    }
+    
+    func loadImage() async throws -> UIImage {
+        guard let validString = article.media?.first?.mediaMetadata?.last?.url,
+              let validURL = URL(string: validString) 
+        else {
+            throw AppError.invalidURL
+        }
         do {
-            let articlesResponse = try await self.fetchMostViewedArticles()
-            self.mostViewedArticles = articlesResponse.results ?? []
+            let imageData =  try await self.networkManager.loadImageData(validURL)
+            guard let validImage = UIImage(data: imageData) else { throw AppError.invalidURL }
+            return validImage
         }
         catch {
-            ProgressHUD.banner("Error Occured", error.localizedDescription)
+            print("Unable to load Image")
+            throw AppError.unableToParse
         }
-    }
-}
-
-extension ArticleViewModel {
-    private func fetchMostViewedArticles() async throws -> ArticleResponse {
-        let endPoint = ArticleEndPoint(with: .allSections, period: .week)
-        let baseURL = NetworkConstants.baseUrl
-        let reqestBuilder = RequestBuilder(baseURL: baseURL, endPoint: endPoint)
-        let request = try reqestBuilder.buildRequest()
-        
-        let articleResponse:ArticleResponse = try await self.networkManager.processRequest(request)
-        return articleResponse
     }
 }
