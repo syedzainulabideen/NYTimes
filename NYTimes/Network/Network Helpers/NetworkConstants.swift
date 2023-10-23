@@ -9,5 +9,5 @@ import Foundation
 
 struct NetworkConstants {
     static let apiKey = "RFsA3Ga5IDorNV8G1mJPvqqTXfFlrkAE"
-    static let baseUrl = URL(string: "https://api.nytimes.com/svc/")!
+    static let baseUrl = "https://api.nytimes.com/svc/"
 }

@@ -13,9 +13,8 @@ struct ArticleEndPoint: EndPoint {
     var headerParams: [HeaderParam : String]?
     var pathURL: String
     
-    init(with section:Section, period:TimePeriod) {
+    init(with section:Section, period:TimePeriod, apiKey:String = NetworkConstants.apiKey) {
         self.pathURL = "/mostpopular/v2/mostviewed/\(section.rawValue)/\(period.rawValue).json"
-    }
-    
-    
+        self.queryParams = [QueryParam.apiKey: apiKey]
+    }    
 }

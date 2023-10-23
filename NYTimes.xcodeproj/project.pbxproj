@@ -25,6 +25,11 @@
 		24166EE12AE6C53900789349 /* ValidArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 24166EC12AE6B0F500789349 /* ValidArticleResponse.json */; };
 		24166EE22AE6C5DF00789349 /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 24166EC22AE6B0F500789349 /* EmptyArticleResponse.json */; };
 		24166EE42AE6C71D00789349 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166EE32AE6C71D00789349 /* RequestBuilderTests.swift */; };
+		24166EE72AE6D20800789349 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 24166EE62AE6D20800789349 /* ProgressHUD */; };
+		24166EEA2AE6D82000789349 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166EE92AE6D82000789349 /* UITableViewCell+Extensions.swift */; };
+		24166EED2AE6D8BD00789349 /* ArticleListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166EEB2AE6D8BD00789349 /* ArticleListingCell.swift */; };
+		24166EEE2AE6D8BD00789349 /* ArticleListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24166EEC2AE6D8BD00789349 /* ArticleListingCell.xib */; };
+		24166EF02AE6DB3A00789349 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166EEF2AE6DB3A00789349 /* AppString.swift */; };
 		8AE558BA2AE66F64007919F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558B92AE66F64007919F1 /* AppDelegate.swift */; };
 		8AE558BC2AE66F64007919F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558BB2AE66F64007919F1 /* SceneDelegate.swift */; };
 		8AE558BE2AE66F64007919F1 /* ArticleListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558BD2AE66F64007919F1 /* ArticleListingController.swift */; };
@@ -65,6 +70,10 @@
 		24166EDC2AE6C0A700789349 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		24166EDF2AE6C26700789349 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		24166EE32AE6C71D00789349 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
+		24166EE92AE6D82000789349 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		24166EEB2AE6D8BD00789349 /* ArticleListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingCell.swift; sourceTree = "<group>"; };
+		24166EEC2AE6D8BD00789349 /* ArticleListingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListingCell.xib; sourceTree = "<group>"; };
+		24166EEF2AE6DB3A00789349 /* AppString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
 		8AE558B62AE66F64007919F1 /* NYTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE558B92AE66F64007919F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AE558BB2AE66F64007919F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24166EE72AE6D20800789349 /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				24166EAE2AE6ADF500789349 /* AppError.swift */,
+				24166EEF2AE6DB3A00789349 /* AppString.swift */,
+				24166EE92AE6D82000789349 /* UITableViewCell+Extensions.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -248,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				8AE558BD2AE66F64007919F1 /* ArticleListingController.swift */,
+				24166EEB2AE6D8BD00789349 /* ArticleListingCell.swift */,
+				24166EEC2AE6D8BD00789349 /* ArticleListingCell.xib */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -302,6 +316,9 @@
 			dependencies = (
 			);
 			name = NYTimes;
+			packageProductDependencies = (
+				24166EE62AE6D20800789349 /* ProgressHUD */,
+			);
 			productName = NYTimes;
 			productReference = 8AE558B62AE66F64007919F1 /* NYTimes.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +351,9 @@
 				Base,
 			);
 			mainGroup = 8AE558AD2AE66F64007919F1;
+			packageReferences = (
+				24166EE52AE6D20800789349 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+			);
 			productRefGroup = 8AE558B72AE66F64007919F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +383,7 @@
 				8AE558C32AE66F67007919F1 /* Assets.xcassets in Resources */,
 				24166EE22AE6C5DF00789349 /* EmptyArticleResponse.json in Resources */,
 				8AE558C12AE66F64007919F1 /* Main.storyboard in Resources */,
+				24166EEE2AE6D8BD00789349 /* ArticleListingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,14 +409,17 @@
 			files = (
 				24166EE02AE6C26700789349 /* RequestBuilder.swift in Sources */,
 				24166EDD2AE6C0A700789349 /* NetworkConstants.swift in Sources */,
+				24166EF02AE6DB3A00789349 /* AppString.swift in Sources */,
 				24166ED02AE6B46E00789349 /* HeaderParam.swift in Sources */,
 				8AE558DC2AE67CC0007919F1 /* NetworkProtocols.swift in Sources */,
 				8AE558DA2AE67C78007919F1 /* NYNetworkManager.swift in Sources */,
+				24166EED2AE6D8BD00789349 /* ArticleListingCell.swift in Sources */,
 				8AE558BE2AE66F64007919F1 /* ArticleListingController.swift in Sources */,
 				8AE558BA2AE66F64007919F1 /* AppDelegate.swift in Sources */,
 				24166EAF2AE6ADF500789349 /* AppError.swift in Sources */,
 				24166ECC2AE6B42F00789349 /* HTTPMethod.swift in Sources */,
 				24166EDA2AE6BEBB00789349 /* ArticleResponse.swift in Sources */,
+				24166EEA2AE6D82000789349 /* UITableViewCell+Extensions.swift in Sources */,
 				24166ECE2AE6B45300789349 /* QueryParam.swift in Sources */,
 				8AE558BC2AE66F64007919F1 /* SceneDelegate.swift in Sources */,
 				24166ED62AE6BE8F00789349 /* ArticleEndPoint.swift in Sources */,
@@ -680,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24166EE52AE6D20800789349 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24166EE62AE6D20800789349 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24166EE52AE6D20800789349 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AE558AE2AE66F64007919F1 /* Project object */;
 }

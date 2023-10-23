@@ -34,8 +34,6 @@ class RequestBuilder {
             urlRequest.setValue(header.value, forHTTPHeaderField: header.key.rawValue)
         }
         
-        dump(urlRequest)
-        
         return urlRequest
     }
 }
