@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ArticleViewModel: ObservableObject {
+class ArticleCellViewModel {
     private let article: ArticleResponse.Result
     private var networkManager:NetworkManager
         
@@ -33,7 +33,9 @@ class ArticleViewModel: ObservableObject {
         self.article.section ?? ""
     }
     
-    func loadImage() async throws -> UIImage {
+    var currentImage:UIImage? = nil
+    
+    func loadImage() async throws {
         guard let validString = article.media?.first?.mediaMetadata?.last?.url,
               let validURL = URL(string: validString) 
         else {
@@ -41,8 +43,7 @@ class ArticleViewModel: ObservableObject {
         }
         do {
             let imageData =  try await self.networkManager.loadImageData(validURL)
-            guard let validImage = UIImage(data: imageData) else { throw AppError.invalidURL }
-            return validImage
+            self.currentImage = UIImage(data: imageData)
         }
         catch {
             print("Unable to load Image")

@@ -15,7 +15,7 @@ class ArticleListingCell: UITableViewCell {
     @IBOutlet weak var sectionLabel:UILabel!
     
     private var cancellableTask: Task<(), Never>?
-    var articleViewModel:ArticleViewModel? {
+    var articleViewModel:ArticleCellViewModel? {
         didSet {
             self.configureCell()
         }
@@ -37,8 +37,8 @@ class ArticleListingCell: UITableViewCell {
 
         cancellableTask = Task {
             do {
-                let image = try await self.articleViewModel?.loadImage()
-                self.profileImageView.image = image
+                try await self.articleViewModel?.loadImage()
+                self.profileImageView.image = self.articleViewModel?.currentImage
             }
             catch {
                 print("Unable to load Image")

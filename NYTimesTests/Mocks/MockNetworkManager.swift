@@ -31,4 +31,10 @@ class MockNetworkManager: NetworkManager {
            throw AppError.unableToParse
         }
     }
+    
+    func loadImageData(_ url: URL) async throws -> Data {
+        let imageData = try await self.currentSession.data(from: url)
+        return imageData.0
+    }
+    
 }

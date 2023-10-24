@@ -8,6 +8,6 @@
 import Foundation
 
 struct NetworkConstants {
-    static let apiKey = "RFsA3Ga5IDorNV8G1mJPvqqTXfFlrkAE"
+    static let apiKey = "XG49H5vNqkqbTfzqTFh3lJ7N5W5LsvAE"
     static let baseUrl = "https://api.nytimes.com/svc/"
 }

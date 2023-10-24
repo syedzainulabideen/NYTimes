@@ -15,7 +15,7 @@ class ArticleListingController: UIViewController {
             self.tableView.register(ArticleListingCell.nibValue, forCellReuseIdentifier: ArticleListingCell.identifierValue)
         }
     }
-    var viewModel:AppViewModel = AppViewModel()
+    var viewModel:ArticleListingViewModel = ArticleListingViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

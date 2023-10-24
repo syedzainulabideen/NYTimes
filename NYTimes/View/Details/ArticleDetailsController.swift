@@ -9,7 +9,7 @@ import UIKit
 import ProgressHUD
 
 class ArticleDetailsController: UIViewController {
-    var currentArticle:ArticleViewModel?
+    var currentArticle:ArticleCellViewModel?
     private var cancellableTask: Task<(), Never>?
     
     @IBOutlet weak var articleMainImage:UIImageView!
@@ -32,13 +32,18 @@ private extension ArticleDetailsController {
         dateLabel.text = currentArticle?.articlePublishedDate
         sectionLabel.text = currentArticle?.articleSection
         
-        cancellableTask = Task {
-            do {
-                let image = try await self.currentArticle?.loadImage()
-                self.articleMainImage.image = image
-            }
-            catch {
-                ProgressHUD.banner("Error Occured", "Unable to load image")
+        if let validImage = self.currentArticle?.currentImage {
+            self.articleMainImage.image = validImage
+        }
+        else {
+            cancellableTask = Task {
+                do {
+                    try await self.currentArticle?.loadImage()
+                    self.articleMainImage.image = self.currentArticle?.currentImage
+                }
+                catch {
+                    ProgressHUD.banner("Error Occured", "Unable to load image")
+                }
             }
         }
     }

@@ -8,13 +8,13 @@
 import Foundation
 import ProgressHUD
 
-class AppViewModel: ObservableObject {
+class ArticleListingViewModel {
     private var networkManager:NetworkManager
     init(networkManager: NetworkManager = NYNetworkManager()) {
         self.networkManager = networkManager
     }
     
-    @Published var mostViewedArticles:[ArticleViewModel] = []
+    @Published var mostViewedArticles:[ArticleCellViewModel] = []
     
     @MainActor 
     func fetchArticles() async {
@@ -26,7 +26,7 @@ class AppViewModel: ObservableObject {
             let articlesResponse = try await self.fetchMostViewedArticles()
             self.mostViewedArticles = articlesResponse.results?
                 .compactMap({ $0 })
-                .map({ ArticleViewModel(article: $0) }) ?? []
+                .map({ ArticleCellViewModel(article: $0) }) ?? []
         }
         catch {
             ProgressHUD.banner("Error Occured", error.localizedDescription)
@@ -34,7 +34,7 @@ class AppViewModel: ObservableObject {
     }
 }
 
-extension AppViewModel {
+extension ArticleListingViewModel {
     private func fetchMostViewedArticles() async throws -> ArticleResponse {
         let endPoint = ArticleEndPoint(with: .allSections, period: .week)
         let baseURL = NetworkConstants.baseUrl
