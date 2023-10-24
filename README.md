@@ -26,4 +26,9 @@ git clone https://github.com/syedzainulabideen/NYTimes.git
 
 
 ## Screenshots:
-<img src="Screenshots/iphone-listing.png" alt="App Screenshot" width="300" height="600"/>
+<img src="Screenshots/iphone-listing.png" alt="App Screenshot" height="600"/>
+<img src="Screenshots/iphone-detail.png" alt="App Screenshot" height="600"/>
+
+
+<img src="Screenshots/ipad-1.png" alt="App Screenshot" width="600"/>
+<img src="Screenshots/ipad-2.png" alt="App Screenshot" width="600"/>
