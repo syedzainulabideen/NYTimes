@@ -28,10 +28,11 @@ class ArticleListingCell: UITableViewCell {
         profileImageView.clipsToBounds = true
     }
     
+    @MainActor
     func configureCell() {
         articleTitleLabel.text = articleViewModel?.articleTitleValue
         authorLabel.text = articleViewModel?.articleByAuthorValue
-        dateLabel.text = articleViewModel?.articlePublishedDate
+        dateLabel.text = "Dated: \(articleViewModel?.articlePublishedDate ?? "")"
         sectionLabel.text = articleViewModel?.articleSection
 
         cancellableTask = Task {

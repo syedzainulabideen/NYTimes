@@ -46,9 +46,101 @@
                     <view key="view" contentMode="scaleToFill" id="MWY-kX-1bk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQj-Hm-zsG">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-He-gjV">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793.66666666666663"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="mgm-wx-gQk">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="396.66666666666669"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zt-IV-YbO">
+                                                <rect key="frame" x="0.0" y="396.66666666666674" width="393" height="397"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-7J-QWb">
+                                                        <rect key="frame" x="20" y="20" width="353" height="357"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bDC-UH-Jgl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="58"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br3-UK-hdJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="58"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvJ-P7-aO4">
+                                                                <rect key="frame" x="0.0" y="69.999999999999943" width="353" height="40.666666666666657"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8p-dO-RLH">
+                                                                <rect key="frame" x="0.0" y="122.66666666666669" width="353" height="175"/>
+                                                                <string key="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-di-TMN">
+                                                                <rect key="frame" x="0.0" y="309.66666666666669" width="353" height="17.666666666666686"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dated: 2023-10-23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfF-N1-wTP">
+                                                                <rect key="frame" x="0.0" y="339.33333333333331" width="353" height="17.666666666666686"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="NewsDetail.contentViewId"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="NKd-7J-QWb" secondAttribute="bottom" constant="20" id="2Ze-A8-3Mn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NKd-7J-QWb" secondAttribute="trailing" constant="20" id="6Eo-fP-ejZ"/>
+                                                    <constraint firstItem="NKd-7J-QWb" firstAttribute="leading" secondItem="6zt-IV-YbO" secondAttribute="leading" constant="20" id="nQH-ZS-ifD"/>
+                                                    <constraint firstItem="NKd-7J-QWb" firstAttribute="top" secondItem="6zt-IV-YbO" secondAttribute="top" constant="20" id="opO-ha-pJN"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YdM-He-gjV" firstAttribute="top" secondItem="AWj-Cw-lX4" secondAttribute="top" id="1o3-JP-uhy"/>
+                                    <constraint firstItem="YdM-He-gjV" firstAttribute="trailing" secondItem="AWj-Cw-lX4" secondAttribute="trailing" id="7VS-xH-O3B"/>
+                                    <constraint firstItem="mgm-wx-gQk" firstAttribute="height" secondItem="Vvd-Sv-dAB" secondAttribute="height" multiplier="0.5" id="A0d-bO-h38"/>
+                                    <constraint firstItem="YdM-He-gjV" firstAttribute="leading" secondItem="AWj-Cw-lX4" secondAttribute="leading" id="Dgh-hu-wgu"/>
+                                    <constraint firstItem="YdM-He-gjV" firstAttribute="leading" secondItem="Vvd-Sv-dAB" secondAttribute="leading" id="JIT-4R-NNh"/>
+                                    <constraint firstItem="Vvd-Sv-dAB" firstAttribute="trailing" secondItem="YdM-He-gjV" secondAttribute="trailing" id="bto-0W-QYv"/>
+                                    <constraint firstItem="YdM-He-gjV" firstAttribute="bottom" secondItem="AWj-Cw-lX4" secondAttribute="bottom" id="spi-3M-Xur"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="AWj-Cw-lX4"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Vvd-Sv-dAB"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="I2J-wN-k1Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uQj-Hm-zsG" secondAttribute="bottom" id="8Mb-bI-55i"/>
+                            <constraint firstAttribute="trailing" secondItem="uQj-Hm-zsG" secondAttribute="trailing" id="Cdk-NJ-U9K"/>
+                            <constraint firstItem="uQj-Hm-zsG" firstAttribute="leading" secondItem="I2J-wN-k1Q" secondAttribute="leading" id="UV6-Tc-kfD"/>
+                            <constraint firstItem="uQj-Hm-zsG" firstAttribute="top" secondItem="I2J-wN-k1Q" secondAttribute="top" id="y6m-LN-QOR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="articleMainImage" destination="mgm-wx-gQk" id="CiH-Gf-Dgi"/>
+                        <outlet property="articleTitleLabel" destination="QvJ-P7-aO4" id="Gxc-Rg-XTT"/>
+                        <outlet property="authorLabel" destination="oKK-di-TMN" id="vGJ-0Y-Q9D"/>
+                        <outlet property="dateLabel" destination="JfF-N1-wTP" id="Ph5-Gv-YoM"/>
+                        <outlet property="sectionLabel" destination="br3-UK-hdJ" id="cfP-am-nok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67K-LF-ilr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,8 +166,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image1" width="1000" height="750"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,7 +16,8 @@ class AppViewModel: ObservableObject {
     
     @Published var mostViewedArticles:[ArticleViewModel] = []
     
-    @MainActor func fetchArticles() async {
+    @MainActor 
+    func fetchArticles() async {
         
         defer { ProgressHUD.dismiss() }
         ProgressHUD.animate()

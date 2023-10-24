@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 extension UITableViewCell {
+    static var nibValue: UINib {
+        return UINib(nibName: identifierValue, bundle: .main)
+    }
+}
+
+
+extension NSObject {
     static var identifierValue: String {
         return String(describing: self)
     }
     
-    static var nibValue: UINib {
-        return UINib(nibName: identifierValue, bundle: .main)
-    }
 }

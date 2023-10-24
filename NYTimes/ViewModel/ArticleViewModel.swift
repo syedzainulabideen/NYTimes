@@ -11,9 +11,7 @@ import UIKit
 class ArticleViewModel: ObservableObject {
     private let article: ArticleResponse.Result
     private var networkManager:NetworkManager
-    
-    @Published var image: UIImage? = nil
-    
+        
     init(article: ArticleResponse.Result, networkManager: NetworkManager = NYNetworkManager()) {
         self.article = article
         self.networkManager = networkManager

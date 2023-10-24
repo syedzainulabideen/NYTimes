@@ -46,4 +46,13 @@ extension ArticleListingController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120.0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let currentArticle = self.viewModel.mostViewedArticles[indexPath.row]
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: ArticleDetailsController.identifierValue) as? ArticleDetailsController {
+            controller.currentArticle = currentArticle
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }
