@@ -50,9 +50,16 @@ extension ArticleListingController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let currentArticle = self.viewModel.mostViewedArticles[indexPath.row]
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: ArticleDetailsController.identifierValue) as? ArticleDetailsController {
-            controller.currentArticle = currentArticle
-            self.navigationController?.pushViewController(controller, animated: true)
+        
+        guard let validSplitController = self.splitViewController else { return }
+        if let detailViewController = validSplitController.viewControllers.last as? ArticleDetailsController, !validSplitController.isCollapsed  {
+            detailViewController.configureUI(with: currentArticle)
+        }
+        else {
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: ArticleDetailsController.identifierValue) as? ArticleDetailsController {
+                controller.currentArticle = currentArticle
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
 }

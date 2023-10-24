@@ -41,6 +41,8 @@
 		8AE558D82AE67C4A007919F1 /* ArticleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558D72AE67C4A007919F1 /* ArticleListingViewModel.swift */; };
 		8AE558DA2AE67C78007919F1 /* NYNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558D92AE67C78007919F1 /* NYNetworkManager.swift */; };
 		8AE558DC2AE67CC0007919F1 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558DB2AE67CC0007919F1 /* NetworkProtocols.swift */; };
+		8AE558E12AE7AC6B007919F1 /* CustomSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558E02AE7AC6B007919F1 /* CustomSplitViewController.swift */; };
+		8AE558E42AE7B245007919F1 /* ArticleCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE558E32AE7B245007919F1 /* ArticleCellViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		8AE558D72AE67C4A007919F1 /* ArticleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewModel.swift; sourceTree = "<group>"; };
 		8AE558D92AE67C78007919F1 /* NYNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYNetworkManager.swift; sourceTree = "<group>"; };
 		8AE558DB2AE67CC0007919F1 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		8AE558E02AE7AC6B007919F1 /* CustomSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitViewController.swift; sourceTree = "<group>"; };
+		8AE558E32AE7B245007919F1 /* ArticleCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModelTests.swift; sourceTree = "<group>"; };
+		8AE558E52AE7B75E007919F1 /* NYTimes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NYTimes.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,7 @@
 			children = (
 				24166EC82AE6B3D200789349 /* NetworkManagerTests.swift */,
 				24166EE32AE6C71D00789349 /* RequestBuilderTests.swift */,
+				8AE558E32AE7B245007919F1 /* ArticleCellViewModelTests.swift */,
 				24166EC02AE6B0CA00789349 /* Stubs */,
 				24166EBD2AE6AFF000789349 /* Mocks */,
 			);
@@ -189,6 +195,7 @@
 		8AE558AD2AE66F64007919F1 = {
 			isa = PBXGroup;
 			children = (
+				8AE558E52AE7B75E007919F1 /* NYTimes.xctestplan */,
 				8AE558B82AE66F64007919F1 /* NYTimes */,
 				24166EB52AE6AF8000789349 /* NYTimesTests */,
 				8AE558B72AE66F64007919F1 /* Products */,
@@ -243,6 +250,7 @@
 		8AE558CF2AE67ABA007919F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8AE558E22AE7AEF3007919F1 /* BaseView */,
 				8AE558D22AE67ADF007919F1 /* Listing */,
 				8AE558D32AE67B03007919F1 /* Details */,
 				8AE558D42AE67B78007919F1 /* Storyboards */,
@@ -283,6 +291,14 @@
 				8AE558BF2AE66F64007919F1 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8AE558E22AE7AEF3007919F1 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				8AE558E02AE7AC6B007919F1 /* CustomSplitViewController.swift */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +416,7 @@
 				24166EC92AE6B3D200789349 /* NetworkManagerTests.swift in Sources */,
 				24166EBF2AE6B00400789349 /* MockNetworkManager.swift in Sources */,
 				24166ED42AE6B4E500789349 /* MockEndPoint.swift in Sources */,
+				8AE558E42AE7B245007919F1 /* ArticleCellViewModelTests.swift in Sources */,
 				24166EE42AE6C71D00789349 /* RequestBuilderTests.swift in Sources */,
 				24166EC72AE6B38F00789349 /* StubLoader.swift in Sources */,
 				24166ED22AE6B4B400789349 /* MockURLProtocol.swift in Sources */,
@@ -415,6 +432,7 @@
 				24166EF02AE6DB3A00789349 /* AppString.swift in Sources */,
 				24166ED02AE6B46E00789349 /* HeaderParam.swift in Sources */,
 				8AE558DC2AE67CC0007919F1 /* NetworkProtocols.swift in Sources */,
+				8AE558E12AE7AC6B007919F1 /* CustomSplitViewController.swift in Sources */,
 				8AE558DA2AE67C78007919F1 /* NYNetworkManager.swift in Sources */,
 				24166EED2AE6D8BD00789349 /* ArticleListingCell.swift in Sources */,
 				8AE558BE2AE66F64007919F1 /* ArticleListingController.swift in Sources */,
@@ -630,7 +648,6 @@
 				INFOPLIST_FILE = NYTimes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -661,7 +678,6 @@
 				INFOPLIST_FILE = NYTimes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

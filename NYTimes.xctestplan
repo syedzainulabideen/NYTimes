@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "2C324CFD-8668-4718-8AF7-1DF485DC1891",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "testExecutionOrdering" : "random"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:NYTimes.xcodeproj",
+      "identifier" : "8AE558B52AE66F64007919F1",
+      "name" : "NYTimes"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:NYTimes.xcodeproj",
+        "identifier" : "24166EB32AE6AF8000789349",
+        "name" : "NYTimesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

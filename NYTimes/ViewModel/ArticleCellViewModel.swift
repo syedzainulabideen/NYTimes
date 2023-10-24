@@ -18,7 +18,7 @@ class ArticleCellViewModel {
     }
     
     var articleTitleValue:String {
-        self.article.abstract ?? ""
+        self.article.title ?? ""
     }
     
     var articleByAuthorValue:String {
@@ -33,8 +33,13 @@ class ArticleCellViewModel {
         self.article.section ?? ""
     }
     
+    var articleDescription:String {
+        self.article.abstract ?? ""
+    }
+    
     var currentImage:UIImage? = nil
     
+    @MainActor
     func loadImage() async throws {
         guard let validString = article.media?.first?.mediaMetadata?.last?.url,
               let validURL = URL(string: validString) 
@@ -44,6 +49,7 @@ class ArticleCellViewModel {
         do {
             let imageData =  try await self.networkManager.loadImageData(validURL)
             self.currentImage = UIImage(data: imageData)
+            print("loadImage: ",Thread.current.isMainThread)
         }
         catch {
             print("Unable to load Image")

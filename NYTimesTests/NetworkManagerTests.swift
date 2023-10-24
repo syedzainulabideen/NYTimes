@@ -99,4 +99,39 @@ extension NetworkManagerTests {
             XCTFail("Unexpected error: \(error)")
         }
     }
+    
+    func testFetchImageData_Success() async {
+        let networkManager = MockNetworkManager(currentSession: mockURLSession)
+        let heartData = UIImage(systemName: "heart")?.jpegData(compressionQuality: 1.0)
+        
+        let httpResponse = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        MockURLProtocol.requestHandler = { request in
+            return (httpResponse, heartData)
+        }
+        
+        do {
+            let responseData: Data = try await networkManager.loadImageData(URL(string: "https://example.com")!)
+            XCTAssertEqual(responseData, heartData)
+        } catch {
+            XCTFail("Unexpected error: \(error)")
+        }
+    }
+    
+    func testFetchImageData_Failed() async {
+        let networkManager = MockNetworkManager(currentSession: mockURLSession)
+        let heartData = UIImage(systemName: "heart")?.jpegData(compressionQuality: 1.0)
+        let trashData = UIImage(systemName: "trash")?.jpegData(compressionQuality: 1.0)
+        
+        let httpResponse = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        MockURLProtocol.requestHandler = { request in
+            return (httpResponse, heartData)
+        }
+        
+        do {
+            let responseData: Data = try await networkManager.loadImageData(URL(string: "https://example.com")!)
+            XCTAssertNotEqual(responseData, trashData)
+        } catch {
+            XCTFail("Unexpected error: \(error)")
+        }
+    }
 }

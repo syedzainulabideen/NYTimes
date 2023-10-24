@@ -28,7 +28,6 @@ class ArticleListingCell: UITableViewCell {
         profileImageView.clipsToBounds = true
     }
     
-    @MainActor
     func configureCell() {
         articleTitleLabel.text = articleViewModel?.articleTitleValue
         authorLabel.text = articleViewModel?.articleByAuthorValue
