@@ -23,6 +23,13 @@ Follow these steps to get the app up and running on your local development envir
 git clone https://github.com/syedzainulabideen/NYTimes.git
 ```
 
+## MVVM Architecture
+
+The app follows the Model-View-ViewModel (MVVM) architectural pattern for structuring the codebase. The key components are:
+
+- Model: The ```ArticleResponse``` class represents the data structure of New York Times articles, encapsulating their properties and related business logic.
+- View: The ```ArticleListingController``` and ```ArticleDetailsController``` classes serve as the user interface components. They are responsible for rendering and presenting data to the user.
+- ViewModel: The ```ArticleListingViewModel``` and ```ArticleCellViewModel``` classes act as intermediaries between the Model and View. They handle data retrieval, transformation, and presentation logic, ensuring a separation of concerns and promoting testability.
 
 
 ## Screenshots:
